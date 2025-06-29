@@ -161,10 +161,10 @@ export default function Home() {
         <section className="px-4 py-16 md:px-8 text-center">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 text-gradient">
-              Video ExtractorAny
+              Video Extractor
             </h1>
             <h2 className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Extract audio from video files online with our free video extractorany tool.
+              Extract audio from video files online with our free video extractor tool.
               Convert MP4, AVI, MOV, and more video formats to high-quality audio files instantly.
             </h2>
 
@@ -272,7 +272,7 @@ export default function Home() {
         <section id="features" className="px-4 py-16 md:px-8">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-4xl font-bold text-center mb-12 text-white">
-              Why Choose Video ExtractorAny?
+              Why Choose Video Extractor?
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
               <article className="text-center p-6 rounded-2xl glass-effect">
@@ -280,14 +280,14 @@ export default function Home() {
                 <h3 className="text-xl font-semibold mb-4 text-white">100% Secure</h3>
                 <p className="text-gray-300">
                   Your video files are processed securely in your browser. We don't store your files permanently,
-                  ensuring complete privacy when using our video extractorany service.
+                  ensuring complete privacy when using our video extractor service.
                 </p>
               </article>
               <article className="text-center p-6 rounded-2xl glass-effect">
                 <Zap className="w-12 h-12 mx-auto mb-4 text-pink-400" />
                 <h3 className="text-xl font-semibold mb-4 text-white">Lightning Fast</h3>
                 <p className="text-gray-300">
-                  Extract audio from video files in seconds. Our optimized video extractorany
+                  Extract audio from video files in seconds. Our optimized video extractor
                   technology ensures quick processing without compromising audio quality.
                 </p>
               </article>
@@ -295,7 +295,7 @@ export default function Home() {
                 <Globe className="w-12 h-12 mx-auto mb-4 text-orange-400" />
                 <h3 className="text-xl font-semibold mb-4 text-white">No Software Required</h3>
                 <p className="text-gray-300">
-                  Use our online video extractorany tool directly in your browser.
+                  Use our online video extractor tool directly in your browser.
                   No downloads, installations, or account registration needed.
                 </p>
               </article>
@@ -307,7 +307,7 @@ export default function Home() {
         <section id="how-it-works" className="px-4 py-16 md:px-8 bg-black bg-opacity-20">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl font-bold text-center mb-12 text-white">
-              How Video ExtractorAny Works
+              How Video Extractor Works
             </h2>
             <div className="space-y-8">
               <article className="flex items-start space-x-4">
@@ -315,7 +315,7 @@ export default function Home() {
                 <div>
                   <h3 className="text-xl font-semibold text-white mb-2">Upload Your Video</h3>
                   <p className="text-gray-300">
-                    Select any video file from your device. Our video extractorany tool supports
+                    Select any video file from your device. Our video extractor tool supports
                     all major video formats including MP4, AVI, MOV, MKV, WEBM, and many more.
                   </p>
                 </div>
@@ -325,7 +325,7 @@ export default function Home() {
                 <div>
                   <h3 className="text-xl font-semibold text-white mb-2">Extract Audio</h3>
                   <p className="text-gray-300">
-                    Click the extract button and let our advanced video extractorany algorithm
+                    Click the extract button and let our advanced video extractor algorithm
                     separate the audio track from your video file while maintaining optimal quality.
                   </p>
                 </div>
@@ -336,7 +336,7 @@ export default function Home() {
                   <h3 className="text-xl font-semibold text-white mb-2">Download Audio</h3>
                   <p className="text-gray-300">
                     Download your extracted audio file in high-quality format.
-                    The entire video extractorany process takes just a few seconds.
+                    The entire video extractor process takes just a few seconds.
                   </p>
                 </div>
               </article>
@@ -357,7 +357,7 @@ export default function Home() {
                   <span className="transform group-open:rotate-180 transition-transform">▼</span>
                 </summary>
                 <div className="mt-4 px-6 pb-4 text-gray-300">
-                  Our video extractorany tool supports all major video formats including MP4, AVI, MOV, MKV, WEBM, FLV, 3GP, and many others.
+                  Our video extractor tool supports all major video formats including MP4, AVI, MOV, MKV, WEBM, FLV, 3GP, and many others.
                   You can extract audio from virtually any video file format.
                 </div>
               </details>
@@ -368,30 +368,30 @@ export default function Home() {
                   <span className="transform group-open:rotate-180 transition-transform">▼</span>
                 </summary>
                 <div className="mt-4 px-6 pb-4 text-gray-300">
-                  Yes! Our video extractorany technology preserves the original audio quality.
+                  Yes! Our video extractor technology preserves the original audio quality.
                   The extracted audio files maintain the same bitrate and quality as the source video's audio track.
                 </div>
               </details>
 
               <details className="group">
                 <summary className="flex justify-between items-center w-full py-4 px-6 rounded-xl glass-effect cursor-pointer text-white font-semibold">
-                  Do I need to create an account to use video extractorany?
+                  Do I need to create an account to use video extractor?
                   <span className="transform group-open:rotate-180 transition-transform">▼</span>
                 </summary>
                 <div className="mt-4 px-6 pb-4 text-gray-300">
-                  No account required! Our video extractorany service is completely free and doesn't require registration.
+                  No account required! Our video extractor service is completely free and doesn't require registration.
                   Simply upload your video file and extract audio instantly.
                 </div>
               </details>
 
               <details className="group">
                 <summary className="flex justify-between items-center w-full py-4 px-6 rounded-xl glass-effect cursor-pointer text-white font-semibold">
-                  What's the maximum file size for video extractorany?
+                  What's the maximum file size for video extractor?
                   <span className="transform group-open:rotate-180 transition-transform">▼</span>
                 </summary>
                 <div className="mt-4 px-6 pb-4 text-gray-300">
                   You can upload video files up to 100MB for audio extraction.
-                  This covers most video files and ensures fast processing with our video extractorany tool.
+                  This covers most video files and ensures fast processing with our video extractor tool.
                 </div>
               </details>
 
@@ -402,7 +402,7 @@ export default function Home() {
                 </summary>
                 <div className="mt-4 px-6 pb-4 text-gray-300">
                   Absolutely! Your privacy is our priority. All processing happens in your browser - we never upload your files to our servers.
-                  Our video extractorany service ensures complete data security and confidentiality.
+                  Our video extractor service ensures complete data security and confidentiality.
                 </div>
               </details>
             </div>
@@ -420,7 +420,7 @@ export default function Home() {
             <span className="text-xl font-bold text-gradient">ExtractorAny</span>
           </div>
           <p className="text-gray-400 mb-6">
-            The best free online video extractorany tool to extract audio from video files.
+            The best free online video extractor tool to extract audio from video files.
             Convert your videos to audio format quickly and securely.
           </p>
           <p className="text-sm text-gray-500">

@@ -2,7 +2,7 @@
  * @Author: FlowerFestival xichentaxue@gmail.com
  * @Date: 2025-06-29 10:59:51
  * @LastEditors: FlowerFestival xichentaxue@gmail.com
- * @LastEditTime: 2025-06-29 13:43:05
+ * @LastEditTime: 2025-06-29 16:06:49
  * @FilePath: /video-extractorany/src/app/layout.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -29,22 +29,22 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: "ExtractorAny - Video Audio Extractor | Extract Audio from Video Files Online",
-  description: "Extract audio from video files online with ExtractorAny. Free video extractorany tool to convert MP4, AVI, MOV to MP3. No registration required, secure and fast audio extraction.",
-  keywords: "video extractorany, extract audio from video, video to audio converter, MP4 to MP3, online audio extractor, video audio separator, extractorany, audio extraction tool, video converter",
+  description: "Extract audio from video files online with ExtractorAny. Free video extractor tool to convert MP4, AVI, MOV to MP3. No registration required, secure and fast audio extraction.",
+  keywords: "video extractor, extract audio from video, video to audio converter, MP4 to MP3, online audio extractor, video audio separator, extractorany, audio extraction tool, video converter",
   authors: [{ name: "ExtractorAny" }],
   creator: "ExtractorAny",
   publisher: "ExtractorAny",
   robots: "index, follow",
   openGraph: {
     title: "ExtractorAny - Video Audio Extractor",
-    description: "Extract audio from video files online with ExtractorAny. Free video extractorany tool to convert video to audio.",
+    description: "Extract audio from video files online with ExtractorAny. Free video extractor tool to convert video to audio.",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     title: "ExtractorAny - Video Audio Extractor",
-    description: "Extract audio from video files online with ExtractorAny. Free video extractorany tool.",
+    description: "Extract audio from video files online with ExtractorAny. Free video extractor tool.",
   },
 
 };
