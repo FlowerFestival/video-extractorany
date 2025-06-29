@@ -2,7 +2,7 @@
  * @Author: FlowerFestival xichentaxue@gmail.com
  * @Date: 2025-06-29 10:59:51
  * @LastEditors: FlowerFestival xichentaxue@gmail.com
- * @LastEditTime: 2025-06-29 11:47:31
+ * @LastEditTime: 2025-06-29 13:30:12
  * @FilePath: /video-extractorany/src/app/layout.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -82,6 +82,14 @@ export default function RootLayout({
       <body className={`${geist.variable} ${geistMono.variable} antialiased`}>
         {children}
       </body>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-VK7J960RY1"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-VK7J960RY1');
+      </script>
     </html>
   );
 }
