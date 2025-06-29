@@ -13,19 +13,31 @@ export default function Home() {
   const audioContextRef = useRef<AudioContext | null>(null);
 
   const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
+    // 如果正在处理中，不允许更换文件
+    if (isProcessing) return;
+
     const file = event.target.files?.[0];
     if (file) {
       setSelectedFile(file);
       setDownloadUrl(null);
+      setExtractedFileName("");
+      setProgress(0);
+      setIsProcessing(false);
     }
   };
 
   const handleDrop = (event: React.DragEvent) => {
     event.preventDefault();
+    // 如果正在处理中，不允许更换文件
+    if (isProcessing) return;
+
     const file = event.dataTransfer.files[0];
     if (file) {
       setSelectedFile(file);
       setDownloadUrl(null);
+      setExtractedFileName("");
+      setProgress(0);
+      setIsProcessing(false);
     }
   };
 
@@ -159,20 +171,37 @@ export default function Home() {
             {/* Upload Area */}
             <div className="max-w-2xl mx-auto mb-16">
               <div
-                className="upload-area rounded-2xl p-12 text-center glass-effect"
+                className={`upload-area rounded-2xl p-12 text-center glass-effect transition-all duration-300 ${
+                  isProcessing
+                    ? 'opacity-50 cursor-not-allowed'
+                    : 'cursor-pointer hover:bg-white/5'
+                }`}
                 onDrop={handleDrop}
                 onDragOver={(e) => e.preventDefault()}
-                onClick={() => fileInputRef.current?.click()}
+                onClick={() => !isProcessing && fileInputRef.current?.click()}
               >
                 <Upload className="w-16 h-16 mx-auto mb-4 text-purple-400 float-animation" />
                 <h3 className="text-xl font-semibold mb-2 text-white">
-                  {selectedFile ? selectedFile.name : "Upload Your Video File"}
+                  {isProcessing
+                    ? `Processing: ${selectedFile?.name}`
+                    : selectedFile
+                      ? `Selected: ${selectedFile.name}`
+                      : "Upload Your Video File"
+                  }
                 </h3>
                 <p className="text-gray-400 mb-6">
-                  Click to browse or drag and drop your video file here
+                  {isProcessing
+                    ? "Please wait while we extract your audio..."
+                    : selectedFile
+                      ? "Click to select a different video file"
+                      : "Click to browse or drag and drop your video file here"
+                  }
                 </p>
                 <p className="text-sm text-gray-500">
-                  Supports MP4, AVI, MOV, MKV, WEBM, and more video formats
+                  {isProcessing
+                    ? `Progress: ${Math.round(progress)}%`
+                    : "Supports MP4, AVI, MOV, MKV, WEBM, and more video formats"
+                  }
                 </p>
                 <input
                   ref={fileInputRef}
@@ -180,48 +209,59 @@ export default function Home() {
                   accept="video/*"
                   onChange={handleFileSelect}
                   className="hidden"
+                  disabled={isProcessing}
                 />
               </div>
 
-              {selectedFile && !downloadUrl && (
+              {selectedFile && (
                 <div className="mt-6">
-                  <button
-                    onClick={extractAudio}
-                    disabled={isProcessing}
-                    className="btn-gradient px-8 py-4 rounded-xl text-white font-semibold text-lg disabled:opacity-50 flex items-center mx-auto"
-                  >
-                    {isProcessing ? (
-                      <>
-                        <Loader className="w-5 h-5 mr-2 animate-spin" />
-                        Extracting Audio... {Math.round(progress)}%
-                      </>
-                    ) : (
-                      "Extract Audio"
-                    )}
-                  </button>
-                  {isProcessing && (
-                    <div className="mt-4 bg-gray-800 rounded-full h-2 overflow-hidden">
-                      <div
-                        className="h-full gradient-bg-primary transition-all duration-300"
-                        style={{ width: `${progress}%` }}
-                      />
+                  {!downloadUrl ? (
+                    <>
+                      <button
+                        onClick={extractAudio}
+                        disabled={isProcessing}
+                        className="btn-gradient px-8 py-4 rounded-xl text-white font-semibold text-lg disabled:opacity-50 flex items-center mx-auto"
+                      >
+                        {isProcessing ? (
+                          <>
+                            <Loader className="w-5 h-5 mr-2 animate-spin" />
+                            Extracting Audio... {Math.round(progress)}%
+                          </>
+                        ) : (
+                          "Extract Audio"
+                        )}
+                      </button>
+                      {isProcessing && (
+                        <div className="mt-4 bg-gray-800 rounded-full h-2 overflow-hidden">
+                          <div
+                            className="h-full gradient-bg-primary transition-all duration-300"
+                            style={{ width: `${progress}%` }}
+                          />
+                        </div>
+                      )}
+                    </>
+                  ) : (
+                    <div className="space-y-4">
+                      <div className="p-4 rounded-xl glass-effect">
+                        <Download className="w-6 h-6 inline mr-2 text-green-400" />
+                        <button
+                          onClick={downloadAudio}
+                          className="text-green-400 font-semibold hover:text-green-300 transition-colors"
+                        >
+                          Download Your Audio File ({extractedFileName})
+                        </button>
+                        <p className="text-sm text-gray-400 mt-2">
+                          ✅ Audio successfully extracted from video
+                        </p>
+                      </div>
+                      <button
+                        onClick={extractAudio}
+                        className="btn-gradient px-8 py-4 rounded-xl text-white font-semibold text-lg flex items-center mx-auto"
+                      >
+                        Extract Audio Again
+                      </button>
                     </div>
                   )}
-                </div>
-              )}
-
-              {downloadUrl && (
-                <div className="mt-6 p-4 rounded-xl glass-effect">
-                  <Download className="w-6 h-6 inline mr-2 text-green-400" />
-                  <button
-                    onClick={downloadAudio}
-                    className="text-green-400 font-semibold hover:text-green-300 transition-colors"
-                  >
-                    Download Your Audio File ({extractedFileName})
-                  </button>
-                  <p className="text-sm text-gray-400 mt-2">
-                    ✅ Audio successfully extracted from video
-                  </p>
                 </div>
               )}
             </div>
